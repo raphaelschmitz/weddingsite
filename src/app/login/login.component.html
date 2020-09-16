@@ -1,0 +1,46 @@
+﻿<html lang="en">
+  <head>   
+
+<style>
+.btn-danger, .btn-danger:visited {
+	background-color: #5F021F !important;
+	color: #fff !important;
+	border-color: #5F021F !important;
+}
+.btn-danger:hover, .btn-danger:active {
+	background-color: #dc3545 !important;
+	color: #fff !important;
+	border-color: #dc3545 !important;
+}
+</style>
+</head>
+<body class="text-center" style="background-color: #fff;">
+
+            <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="form-signin">
+
+                <img class="mb-4" src="./assets/logo.png" alt="" width="120" height="120">
+                <h1 class="h3 mb-3 font-weight-normal">Willkommen!</h1>
+                <!--<label for="inputEmail" class="sr-only">Email address</label>
+                <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>-->
+                <label for="inputPassword" class="sr-only">Code</label>
+
+                <input type="password" formControlName="password" class="form-control" placeholder="Code" required [ngClass]="{ 'is-invalid': submitted && f.password.errors || error }">
+                <button class="btn btn-lg btn-danger btn-block" type="submit">Login</button>
+                <p class="mt-5 mb-3 text-muted">&copy; 2020</p>
+
+
+                <!-- 
+                <div class="form-group" style="visibility: hidden">
+                    <label for="username">Username</label>
+                    <input type="text" formControlName="username" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.username.errors }" />
+                    <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
+                        <div *ngIf="f.username.errors.required">Username is required</div>
+                    </div>
+                </div>
+                -->
+
+            </form>
+        </body>
+</html>
+ 
+

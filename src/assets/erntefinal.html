@@ -1,0 +1,48 @@
+<head>
+  <style>
+		#my2 {
+		position: relative;
+		height: 400px;
+		width: 100%;
+		overflow: hidden;
+			
+		}
+
+		@media only screen and (min-width: 1024px) {
+		#my2 {
+			height: 500px;
+		}
+		}
+		
+		
+		#myVideo2 {
+		width:100%;
+		height: 100%;
+		position: relative;
+		object-fit: cover;
+		
+		object-position: 0% 70%;
+		}
+		
+		@media only screen and (max-width: 767px) {
+		#myVideo2 {
+			object-position: 40% 50%;
+		}
+		}
+</style>
+		
+</head>
+  
+  <body style="margin: 0;">
+      <div id="my2">
+    <video
+      id="myVideo2"
+      preload="none"
+      loop
+      autoplay
+      muted
+      playsinline>
+      <source type="video/mp4" src="erntefinal.mp4">
+    </video>
+  </div>
+  </body>

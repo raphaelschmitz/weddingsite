@@ -1,0 +1,34 @@
+@types/waypoints
+ng2-date-countdown
+@types/jquery
+jquery
+
+docker build -t raphaelschmitz/wedding:latest . --no-cache
+
+
+docker push raphaelschmitz/wedding:latest
+
+
+docker run --rm raphaelschmitz/wedding:latest
+
+kubectl create secret docker-registry regcred --docker-server=<your-registry-server> --docker-username=<your-name> --docker-password=<your-pword> --docker-email=<your-email>
+
+
+DOCKER_REGISTRY_SERVER=docker.io
+DOCKER_USER=raphaelschmitz
+DOCKER_EMAIL=raphael.schmitz@me.com
+DOCKER_PASSWORD=Schmitz913#
+
+kubectl create secret docker-registry myregistrykey \
+  --docker-server=$DOCKER_REGISTRY_SERVER \
+  --docker-username=$DOCKER_USER \
+  --docker-password=$DOCKER_PASSWORD \
+  --docker-email=$DOCKER_EMAIL
+
+
+docker run --name av-app-container -d -p 8080:80 raphaelschmitz/wedding:latest
+
+
+docker push raphaelschmitz/wedding:latest
+
+https://medium.com/@wkrzywiec/build-and-run-angular-application-in-a-docker-container-b65dbbc50be8

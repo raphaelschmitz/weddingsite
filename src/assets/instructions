@@ -1,0 +1,11 @@
+docker login -u "raphaelschmitz" -p "Schmitz913#" docker.io
+
+docker build -t raphaelschmitz/wedding:latest . --no-cache 
+
+docker push docker.io/raphaelschmitz/wedding
+
+docker run docker.io/raphaelschmitz/wedding -p 8080:80
+
+LcFmvnhM8VBB
+
+docker run --name test -d -p 8080:80 raphaelschmitz/wedding
